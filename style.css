@@ -18,11 +18,11 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "terfens-1","terfens-2",sans-serif;
-  margin: 5px 130px;
+  margin: 5px 10px;
 }
 
 h1 {
-  font-size: 2.4em;
+  font-size: 3.0em;
 }
 
 h2 {
@@ -82,8 +82,9 @@ img {
 }
 
 .title a {
-  font-size: 1.3em;
+  font-size: 4.0em;
   padding: 1px 4px;
+  text-decoration: none;
 }
 /*****************************************************************************/
 /*
@@ -116,13 +117,29 @@ img {
   background-color: #eef;
   padding: 0 .4em;
 }
+#home h1 {
+  padding: 5px;
+  margin-left: 0;
+  font-size: 2.4em;
+}
+#home h2 {
+  margin-top: 20px;
+  padding-left: 0;
+  margin-left: 0;
+  font-size: 2.4em;
+}
+#home p {
+  padding-left: 0;
+  margin-left: 20px;
+}
 
-#post ul,
-#post ol {
+#home ul, #post ul,
+#home ol, #post ol {
   width: 500px;
   text-align: left;
   margin: 0 auto;
   padding: 2px;
+  margin-bottom: 10px;
 }
 
 #post code {
