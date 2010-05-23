@@ -11,6 +11,5 @@ recipe_url      "http://ciderapp.org/cider.tgz"
 json_attribs    "http://ciderapp.org/latest"
 
 file_cache_path "#{cider_root}"
-cookbook_path   "#{cider_root}/smeagol/cookbooks"
-recipe_path     "#{cider_root}/smeagol/cookbooks"
+cookbook_path   "#{cider_root}/cookbooks"
 cache_options   ({ :path => "#{cider_root}/cache/checksums", :skip_expires => true })
