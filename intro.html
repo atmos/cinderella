@@ -16,7 +16,7 @@
 
     <div class="site">
       <div class="title">
-        <a href="/cider/">Cider</a>
+        <a href="/cider/index.html">Cider</a>
       </div>
 
       <div id="home">
@@ -69,9 +69,17 @@
         <hr />
         <h2>Notes</h2>
         <ul>
-          <li>Customizing PS1/Shell Env/etc: use ~/.cider.profile.custom, it won't be overwritten each run.</li>
-          <li>Sepcifying the default RVM Environment: DEFAULT_RVM_VM=ruby-1.9.2 cider</li>
           <li>Backups should be made for any dotfiles cider touches.</li>
+          <li>Customizing PS1/Shell Env/etc:
+<pre class="terminal">cinderella% cat ~/.cider.profile.custom
+set -o vi
+if [[ -x ~/Developer/bin/fortune ]]; then
+  echo ""; fortune; echo ""
+fi
+alias nerd="vim +NERDTree"
+alias g="git"</pre></li>
+          <li>Sepcifying the default RVM Environment:<pre class="terminal">cinderella% DEFAULT_RVM_VM=ruby-1.9.2 cider</pre>
+          </li>
         </ul>
         <hr />
         <hr />
