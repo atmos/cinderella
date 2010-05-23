@@ -162,21 +162,24 @@ img {
   margin-bottom: 10px;
 }
 
-#post code {
+#post code, #home code {
   border: 1px solid #ddd;
   background-color: #eef;
   font-size: 95%;
   padding: 0 .2em;
 }
 
-#post pre code {
+#post pre code, #home pre {
   border: none;
 }
 
-#post pre.terminal {
+#post pre.terminal, #home pre.terminal {
   border: 1px solid black;
   background-color: #333;
   color: white;
+  width: 90%;
+  margin: 0 auto;
+  text-align: left;
 }
 
 #post pre.terminal code {

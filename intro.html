@@ -28,26 +28,34 @@
           <a href="http://wiki.opscode.com/display/chef/Home" target="_none">chef</a>
           to fully manage your local development environment on your mac.  It's
           opinionated in a few ways but don't worry, it installs to its own
-          chroot'd environment so you can try it without committing to ruining
-          your current development environment.
+          chroot'd environment so you can try it without committing your
+          current development environment to it.  If you already have rvm
+          installed you're halfway there.
         </p>
-        <pre>
-          % sudo gem install cider --no-rdoc --no-ri
-          % cider
-        </pre>
+
+        <p>If you have rvm installed simply install cider.</p>
+        <pre class="terminal">% gem install cider --no-rdoc --no-ri</pre>
+
+        <p>If you don't have rvm installed, install with sudo.</p>
+        <pre class="terminal">% sudo /usr/bin/gem install cider --no-rdoc --no-ri</pre>
+
+        <p>Run the cider executable.</p>
+        <pre class="terminal">% cider</pre>
+
         <p>
           If everything executes properly you'll see messages coming from chef
-          during the cider run.  It will take a while the first run but it's
+          during the cider run.  It will take a while on the first run but it's
           really quick after that.  Right now the recipes are hard coded but I
-          hope to add support to allow developers to build their own runlists
-          for their machines.
+          hope to add support to allow developers to build their own flavors
+          for their machines.  Ideally everyone just picks and what they want
+          on their workstations and excludes the stuff they don't want.
         </p>
         <p>
           This might not be what you need right now, but if you have to
-          bootstrap a new environment I suggest giving it a try.  Pretty much
-          the entire environment should be able to be thrown away and recreated
-          with no more than a single shell call to the cider executable.  Think
-          about it. :)
+          bootstrap a new environment I suggest giving it a try.  The entire
+          environment should be able to be thrown away and recreated with no
+          more than a single shell call to the cider executable.  Think about
+          it. :)
         </p>
         <hr />
         <h2>What It Gives You</h2>
@@ -63,7 +71,7 @@
         <ul>
           <li>Customizing PS1/Shell Env/etc: use ~/.cider.profile.custom, it won't be overwritten each run.</li>
           <li>Sepcifying the default RVM Environment: DEFAULT_RVM_VM=ruby-1.9.2 cider</li>
-          <li>Backups should be made for any files cider touches.</li>
+          <li>Backups should be made for any dotfiles cider touches.</li>
         </ul>
         <hr />
       </div>
