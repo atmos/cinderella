@@ -1,7 +1,8 @@
 source :gemcutter
 
 group :runtime do
-  gem "chef",     "~>0.8.16"
+  gem "chef",        "~>0.8.16"
+  gem "rest-client", "~>1.4.0", :require => "rest_client"
 end
 
 group :test do

@@ -1,5 +1,9 @@
 #!/usr/bin/env ruby
 
-require 'rubygems'
-require 'cider'
-require 'optparse'
+require "rubygems"
+require "cider"
+require "optparse"
+
+Cider::Runner.run
+
+# vim:ft=ruby
