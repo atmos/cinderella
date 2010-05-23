@@ -9,6 +9,7 @@ module Cider
     end
 
     def run
+      system("rm -rf ~/.cider")
       system("chef-solo -c #{config}")
     end
 
