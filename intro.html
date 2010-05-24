@@ -23,21 +23,30 @@
         <hr />
         <h2>Getting Started</h2>
         <p>
-          Cider is a combination of
-          <a href="http://mxcl.github.com/homebrew/" target="_none">homebrew</a> and 
-          <a href="http://wiki.opscode.com/display/chef/Home" target="_none">chef</a>
-          to fully manage your local development environment on your mac.  It's
-          opinionated in a few ways but don't worry, it installs to its own
-          chroot'd environment so you can try it without committing your
-          current development environment to it.  If you already have rvm
-          installed you're halfway there.
+          Cider is a fully managed development environment for open source
+          hacking on Mac OSX.  It's powered by two awesome open source
+          applications,
+          <a href="http://mxcl.github.com/homebrew/" target="_none">homebrew</a> and
+          <a href="http://wiki.opscode.com/display/chef/Home" target="_none">chef</a>.
+          You only need
+          <a href="http://developer.apple.com/technologies/xcode.html">xcode</a>
+          to get started.
         </p>
 
-        <p>If you have rvm installed simply install cider.</p>
+        <p>
+          Cider is opinionated in a few ways but don't worry, it installs to
+          its own chroot'd environment(~/Developer) so you can try it without
+          committing your current development environment to it.  If you
+          already have rvm installed then you're halfway there.
+        </p>
+
+        <p>If you already use <a href="http://rvm.beginrescueend.com">rvm</a>, just install cider.</p>
         <pre class="terminal">% gem install cider --no-rdoc --no-ri</pre>
 
         <p>If you don't have rvm installed, install with sudo.</p>
         <pre class="terminal">% sudo /usr/bin/gem install cider --no-rdoc --no-ri</pre>
+
+        <p>You now have everything you need to run cider.</p>
         <hr />
 
         <h2>Running Cider</h2>
