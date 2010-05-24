@@ -107,17 +107,9 @@ INFO: Replacing the run_list with ["homebrew", "rvm", "node"] from JSON</pre>
 
         <h2>Notes</h2>
         <ul>
-          <li>Backups are be made for any of your dotfiles cider touches.</li>
-          <li>Customizing PS1/Shell Env/etc:
-<pre class="terminal">cinderella% cat ~/.cider.profile.custom
-set -o vi
-if [[ -x ~/Developer/bin/fortune ]]; then
-  echo ""; fortune; echo ""
-fi
-alias nerd="vim +NERDTree"
-alias g="git"</pre></li>
-          <li>Sepcifying the default RVM Environment:<pre class="terminal">% rvm use 1.9.2 --default</pre>
-          </li>
+          <li>Backups are be created for any dotfiles cider touches.</li>
+          <li>Customize your environment in ~/.cider.profile.custom</li>
+          <li>Sepcifying a default RVM version other than 1.8.7: <pre class="terminal">% rvm use 1.9.2 --default</pre></li>
         </ul>
         <hr />
         <h2>Feedback</h2>
