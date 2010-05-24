@@ -53,14 +53,14 @@
         </p>
 
         <hr />
-        <h2>Bootstrap yourself from curl</h2>
+        <h2>Bootstrap with curl</h2>
         <p>
           Just curl this URL.  If the bootstrap script needs any interaction
           with you with you it will be in the first few seconds.  It might need
           sudo to install the cider executable.
         </p>
         <p>
-          The initial build should take about 30 minutes.
+          The build should take about 30 minutes.
         </p>
         <pre class="terminal">% curl \
    http://github.com/atmos/cider/raw/master/bootstrap.sh \
@@ -70,18 +70,9 @@
 %
 </pre>
 
-
-        <p>Verify your ruby version:</p>
-        <pre class="terminal">% which ruby
-/Users/atmos/.rvm/gems/ruby-1.8.7-p249/bin/ruby</pre>
-        <p>Verify the cider gem is installed:</p>
-        <pre class="terminal">% which cider
-/Users/atmos/.rvm/gems/ruby-1.8.7-p249/bin/cider</pre>
-
         <p>
           Cider can manage itself from here.  You're ready to go hack and do
-          stuff. Checkout
-          <a href="http://github.com/" target="_none">github</a> perhaps.
+          stuff.
         </p>
         <hr />
 
@@ -91,8 +82,7 @@
           Cider will automatically update itself if when needed.
         </p>
         <p>
-          Currently there are no command line options, it just installs and
-          exits.
+          There are no command line options, it just installs and exits.
         </p>
         <pre class="terminal">% cider
 INFO: Starting Chef Solo Run
