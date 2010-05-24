@@ -24,22 +24,23 @@
         <h2>Getting Started</h2>
         <p>
           Cider is a fully managed development environment for open source
-          hacking on Mac OSX.  It's powered by two awesome open source
-          applications,
+          hacking on Mac OSX.  It's powered by 
+          <a href="http://rvm.beginrescueend.com" target="_none">rvm</a>,
           <a href="http://mxcl.github.com/homebrew/" target="_none">homebrew</a> and
           <a href="http://wiki.opscode.com/display/chef/Home" target="_none">chef</a>.
           You only need
-          <a href="http://developer.apple.com/technologies/xcode.html">xcode</a>
+          <a href="http://developer.apple.com/technologies/xcode.html">Xcode</a>
           to get started.
         </p>
 
         <p>
-          Cider is opinionated in a few ways but don't worry, it installs to
-          its own chroot'd environment(~/Developer) so you can try it without
-          committing your current development environment to it.
+          Cider builds everything up in ~/Developer.  It won't stomp on any of
+          your current installations so you don't have to commit your whole
+          machine to cider at once.  It's a breeze to rollback if you really
+          want to. :)
         </p>
 
-        <p>You're gonna have to trust me here, bootstrap yourself from curl</p>
+        <p>You're gonna have to trust me here, bootstrap yourself from curl:</p>
         <pre class="terminal">% curl \
    http://github.com/atmos/cider/raw/master/bootstrap.sh \
    -o - | sh</pre>
@@ -52,25 +53,28 @@
 
         <h2>Running Cider Normally</h2>
         <p>
-          Run the cider executable.  Currently there's no command line options,
-          it just installs and exits.
+          After the initial bootstrapping you only need to run the cider
+          executable.  You should run cider regularly to keep up with the
+          latest changes.  Cider will keep itself up to date by installing update itself as part of the chef runs as
+          well.  Currently there's no command line options, it just installs
+          and exits.
         </p>
-        <pre class="terminal">% cider</pre>
-
+        <pre class="terminal">% cider
+INFO: Starting Chef Solo Run
+INFO: Replacing the run_list with ["homebrew", "rvm", "node"] from JSON</pre>
         <p>
-          It will take a while on the first run but it's really quick after that.
-          If everything executes properly you'll see messages coming from chef
+          It will take a while on the first run but it's quick after that.  If
+          everything executes properly you'll see messages coming from chef
           during the cider run.  Right now the recipes are hard coded but I
           hope to add support to allow developers to build their own flavors
-          for their machines.  Ideally everyone just picks and what they want
-          on their workstations and excludes the stuff they don't want.
+          for their machines.  Ideally everyone just picks what they want on
+          their machines and excludes the stuff they don't want.
         </p>
         <p>
           This might not be what you need right now, but if you have to
           bootstrap a new environment I suggest giving it a try.  The entire
           environment should be able to be thrown away and recreated with no
-          more than a single shell call to the cider executable.  Think about
-          it. :)
+          more than a single shell call to the cider executable.
         </p>
         <hr />
 
@@ -101,7 +105,8 @@ if [[ -x ~/Developer/bin/fortune ]]; then
 fi
 alias nerd="vim +NERDTree"
 alias g="git"</pre></li>
-          <li>Sepcifying the default RVM Environment:<pre class="terminal">cinderella% DEFAULT_RVM_VM=ruby-1.9.2 cider</pre>
+          <li>Sepcifying the default RVM Environment:<pre class="terminal">cinderella% DEFAULT_RVM_VM=ruby-1.9.2 cider
+INFO: Starting Chef Solo Run</pre>
           </li>
         </ul>
         <hr />
