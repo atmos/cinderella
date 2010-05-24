@@ -36,23 +36,24 @@
         <p>
           Cider is opinionated in a few ways but don't worry, it installs to
           its own chroot'd environment(~/Developer) so you can try it without
-          committing your current development environment to it.  If you
-          already have rvm installed then you're halfway there.
+          committing your current development environment to it.
         </p>
 
-        <p>If you already use <a href="http://rvm.beginrescueend.com">rvm</a>, just install cider.</p>
-        <pre class="terminal">% gem install cider --no-rdoc --no-ri</pre>
+        <p>You're gonna have to trust me here, bootstrap yourself from curl</p>
+        <pre class="terminal">% curl \
+   http://github.com/atmos/cider/raw/master/bootstrap.sh \
+   -o - | sh</pre>
 
-        <p>If you don't have rvm installed, install with sudo.</p>
-        <pre class="terminal">% sudo /usr/bin/gem install cider --no-rdoc --no-ri</pre>
-
-        <p>You now have everything you need to run cider.</p>
+        <p>
+          When this completes you'll probably want to launch a new shell. Hit
+          &#8984;t and you should be running under a cider environment.
+        </p>
         <hr />
 
-        <h2>Running Cider</h2>
+        <h2>Running Cider Normally</h2>
         <p>
-          Run the cider executable.  Currently there's no options, it just
-          installs everything.
+          Run the cider executable.  Currently there's no command line options,
+          it just installs and exits.
         </p>
         <pre class="terminal">% cider</pre>
 
