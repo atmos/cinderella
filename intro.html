@@ -41,23 +41,23 @@
         </p>
 
         <p>Bootstrap yourself from curl:</p>
-        <pre class="terminal">% curl \
+        <pre class="terminal">curl \
    http://github.com/atmos/cider/raw/master/bootstrap.sh \
    -o - | sh</pre>
-
-        <p>
-          When this completes you'll probably want to launch a new shell. Hit
-          '&#8984;t' and a new tab will appear with a shell running under cider.
-        </p>
-
-        <p>Ruby 1.8.7 should be your ruby version:</p>
-        <pre class="terminal">% ruby --version
+        <p>Check your ruby version:</p>
+        <pre class="terminal">ruby --version
 ruby 1.8.7 (2010-01-10 patchlevel 249) [i686-darwin10.3.0]</pre>
+        <p>Ensure the new cider is installed:</p>
+        <pre class="terminal">which cider
+/Users/atmos/.rvm/gems/ruby-1.8.7-p249/bin/cider
+</pre>
 
         <p>
-          You're ready to go hack and do things, Checkout <a href="http://github.com/">github</a> maybe.
+          Ruby 1.8.7 from rvm is now your default version ruby.  Cider should
+          be able to manage itself from here.  You're ready to go hack and do
+          stuff. Checkout
+          <a href="http://github.com/" target="_none">github</a> perhaps.
         </p>
-
         <hr />
 
         <h2>Running Cider</h2>
