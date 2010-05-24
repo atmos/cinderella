@@ -41,16 +41,17 @@
         </p>
 
         <p>Bootstrap yourself from curl:</p>
-        <pre class="terminal">curl \
+        <pre class="terminal">% curl \
    http://github.com/atmos/cider/raw/master/bootstrap.sh \
    -o - | sh</pre>
         <p>Check your ruby version:</p>
-        <pre class="terminal">ruby --version
-ruby 1.8.7 (2010-01-10 patchlevel 249) [i686-darwin10.3.0]</pre>
+        <pre class="terminal">% ruby --version</pre>
+        <p>It should resemble something like this:</p>
+        <pre class="terminal">ruby 1.8.7 (2010-01-10 patchlevel 249) [i686-darwin10.3.0]</pre>
         <p>Ensure the new cider is installed:</p>
-        <pre class="terminal">which cider
-/Users/atmos/.rvm/gems/ruby-1.8.7-p249/bin/cider
-</pre>
+        <pre class="terminal">% which cider</pre>
+        <p>It should resume something like this:</p>
+        <pre class="terminal">/Users/atmos/.rvm/gems/ruby-1.8.7-p249/bin/cider</pre>
 
         <p>
           Ruby 1.8.7 from rvm is now your default version ruby.  Cider should
@@ -64,7 +65,7 @@ ruby 1.8.7 (2010-01-10 patchlevel 249) [i686-darwin10.3.0]</pre>
         <p>
           After the initial bootstrapping you only need to run the cider
           executable.  You should run cider regularly to keep up with the
-          latest changes.  Cider will automatically update itself.  Currently
+          latest changes since it will automatically update itself.  Currently
           there's no command line options, it just installs and exits.
         </p>
         <pre class="terminal">% cider
