@@ -44,6 +44,12 @@
         <pre class="terminal">% curl \
    http://github.com/atmos/cider/raw/master/bootstrap.sh \
    -o - | sh</pre>
+
+        <p>
+          It will take about an hour to run the first time.  Subsequent runs
+          take fewer than 15 seconds.
+        </p>
+
         <p>Check your ruby version:</p>
         <pre class="terminal">% ruby --version</pre>
         <p>It should resemble something like this:</p>
@@ -71,13 +77,11 @@
         <pre class="terminal">% cider
 INFO: Starting Chef Solo Run
 INFO: Replacing the run_list with ["homebrew", "rvm", "node"] from JSON</pre>
+
         <p>
-          It will take a while on the first run but it's quick after that.  If
-          everything executes properly you'll see messages coming from chef
-          during the cider run.  Right now the recipes are hard coded but I
-          hope to add support to allow developers to build their own flavors
-          for their machines.  Ideally everyone just picks what they want on
-          their machines and excludes the stuff they don't want.
+          I hope to add support to allow developers to build their own flavors
+          for their machines.  Ideally everyone just picks how they want their
+          development environment configured.
         </p>
         <p>
           This might not be what you need right now, but if you have to
