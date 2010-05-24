@@ -107,7 +107,7 @@ INFO: Replacing the run_list with ["homebrew", "rvm", "node"] from JSON</pre>
 
         <h2>Notes</h2>
         <ul>
-          <li>Backups should be made for any dotfiles cider touches.</li>
+          <li>Backups are be made for any of your dotfiles cider touches.</li>
           <li>Customizing PS1/Shell Env/etc:
 <pre class="terminal">cinderella% cat ~/.cider.profile.custom
 set -o vi
@@ -116,8 +116,7 @@ if [[ -x ~/Developer/bin/fortune ]]; then
 fi
 alias nerd="vim +NERDTree"
 alias g="git"</pre></li>
-          <li>Sepcifying the default RVM Environment:<pre class="terminal">cinderella% DEFAULT_RVM_VM=ruby-1.9.2 cider
-INFO: Starting Chef Solo Run</pre>
+          <li>Sepcifying the default RVM Environment:<pre class="terminal">% rvm use 1.9.2 --default</pre>
           </li>
         </ul>
         <hr />
