@@ -20,6 +20,19 @@
       </div>
 
       <div id="home">
+
+        <hr />
+        <h2>What It Gives You</h2>
+        <ul>
+          <li>
+            <a href="http://dev.mysql.com">mysql</a>,
+            <a href="http://postgresql.org">postgres</a> and
+            <a href="http://www.mongodb.org">mongodb</a> running as your user
+          </li>
+          <li><a href="http://rvm.beginrescueend.com">rvm</a> with <a href="http://rubini.us/">rubinius</a> and ruby 1.8.7-p249</li>
+          <li><a href="http://nodejs.org">node.js</a> development environment</li>
+        </ul>
+
         <hr />
         <h2>Getting Started</h2>
         <p>
@@ -36,11 +49,19 @@
         <p>
           Cider builds everything up in ~/Developer.  It won't stomp on any of
           your current installations so you don't have to commit your entire
-          machine immediately.  It's a breeze to rollback if you really want
-          to.
+          machine immediately.  It's simple to rollback if you really want to.
         </p>
 
-        <p>Bootstrap yourself from curl:</p>
+        <hr />
+        <h2>Bootstrap yourself from curl</h2>
+        <p>
+          Just curl this URL.  If the bootstrap script needs any interaction
+          with you with you it will be in the first few seconds.  It might need
+          sudo to install the cider executable.
+        </p>
+        <p>
+          The initial build should take about 30 minutes.
+        </p>
         <pre class="terminal">% curl \
    http://github.com/atmos/cider/raw/master/bootstrap.sh \
    -o - | sh
@@ -49,14 +70,6 @@
 %
 </pre>
 
-        <p>
-          If it needs any interaction with you with you it will be in the first
-          few seconds.  It might need sudo to install the cider executable.
-        </p>
-        <p>
-          It will take about 30 minutes to run the first time.  Subsequent runs
-          take fewer than 15 seconds.
-        </p>
 
         <p>Verify your ruby version:</p>
         <pre class="terminal">% which ruby
@@ -75,36 +88,20 @@
         <h2>Running Cider</h2>
         <p>
           You should run cider regularly to keep up with the latest changes.
-          Cider will automatically update itself if when needed.  Currently
-          there's no command line options, it just installs and exits.
+          Cider will automatically update itself if when needed.
+        </p>
+        <p>
+          Currently there are no command line options, it just installs and
+          exits.
         </p>
         <pre class="terminal">% cider
 INFO: Starting Chef Solo Run
 INFO: Replacing the run_list with ["homebrew", "rvm", "node"] from JSON</pre>
 
         <p>
-          I hope to add support to allow developers to build their own flavors
-          for their machines.  Ideally everyone just picks how they want their
+          Ideally everyone just picks and chooses how they want their
           development environment configured.
         </p>
-        <p>
-          This might not be what you need right now, but if you have to
-          bootstrap a new environment I suggest giving it a try.  The entire
-          environment should be able to be thrown away and recreated with no
-          more than a single shell call to the cider executable.
-        </p>
-        <hr />
-
-        <h2>What It Gives You</h2>
-        <ul>
-          <li>
-            <a href="http://dev.mysql.com">mysql</a>,
-            <a href="http://postgresql.org">postgres</a> and
-            <a href="http://www.mongodb.org">mongodb</a> running as your user
-          </li>
-          <li><a href="http://rvm.beginrescueend.com">rvm</a> with <a href="http://rubini.us/">rubinius</a> and ruby 1.8.7-p249</li>
-          <li><a href="http://nodejs.org">node.js</a> development environment</li>
-        </ul>
         <hr />
 
         <h2>Contributing Recipes</h2>
