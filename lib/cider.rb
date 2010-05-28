@@ -11,6 +11,7 @@ module Cider
     def run
       system("rm -rf ~/.cider")
       system("chef-solo -c #{config}")
+      exit($?)
     end
 
     def config
