@@ -6,12 +6,8 @@ apple + homebrew + chef
 Installing
 ==========
 
-    % gem install cider
-    % cider init
-    % EDITOR="vim" EMAIL="atmos@atmos.org" FULLNAME="Corey Donohohe" cider install
-     (in /Users/atmos/p/smeagol)
-     INFO: Starting Chef Solo Run
-     ....
+    % open http://www.atmos.org/cider/intro.html
+
 
 You should be in great shape for contributing to open source on a mac after that.
 
