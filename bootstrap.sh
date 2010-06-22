@@ -21,6 +21,7 @@ if [ "$?" -eq "0" ]; then
     mv ~/.cider.bootstrap.log ~/.cider
   fi
   source ~/.cider.profile
+  hash -r
 else
   cat ~/.cider.bootstrap.log
   echo ""
