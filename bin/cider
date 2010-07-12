@@ -17,7 +17,7 @@ MACOS_VERSION      = /(10\.\d+)(\.\d+)?/.match(MACOS_FULL_VERSION).captures.firs
 if MACOS_VERSION >= 10.6
   begin
     xcode_path = `/usr/bin/xcode-select -print-path`.chomp
-    return nil if xcode_path.empty?
+    exit(1) if xcode_path.empty?
     if `#{xcode_path}/usr/bin/llvm-gcc-4.2 -v 2>&1` =~ /LLVM build (\d{4,})/
       if $1.to_i < RECOMMENDED_LLVM
         $stderr.puts "You should really upgrade your xcode install"
