@@ -3,7 +3,7 @@ require 'rubygems/specification'
 require 'bundler'
 
 GEM         = "cider"
-GEM_VERSION = "0.1.7"
+GEM_VERSION = "0.1.8"
 AUTHOR      = "Corey Donohoe"
 EMAIL       = "atmos@atmos.org"
 HOMEPAGE    = "http://github.com/atmos/cider"
