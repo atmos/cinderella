@@ -2,7 +2,7 @@ source :gemcutter
 
 group :runtime do
   gem "rvm",         "~>0.1.32"
-  gem "chef",        "~>0.9.6"
+  gem "chef",        "~>0.9.8"
   gem "json",        "1.4.2"
 end
 
