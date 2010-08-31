@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Cider - A Development Environment for Macs</title>
+    <title>Cinderella - A Development Environment for Macs</title>
     <meta name="author" content="Corey Donohoe" />
 
     <!-- Homepage CSS -->
@@ -16,7 +16,7 @@
 
     <div class="site">
       <div class="title">
-        <a href="/cider/index.html">Cider</a>
+        <a href="/cinderella/index.html">Cinderella</a>
       </div>
 
       <div id="home">
@@ -44,7 +44,7 @@
         <hr />
         <h2>Getting Started</h2>
         <p>
-          Cider is a fully managed development environment for open source
+          Cinderella is a fully managed development environment for open source
           hacking on Mac OSX.  It's powered by
           <a href="http://rvm.beginrescueend.com" target="_none">rvm</a>,
           <a href="http://mxcl.github.com/homebrew/" target="_none">homebrew</a> and
@@ -55,7 +55,7 @@
         </p>
 
         <p>
-          Cider builds everything up in ~/Developer.  It won't stomp on any of
+          Cinderella builds everything up in ~/Developer.  It won't stomp on any of
           your current installations so you don't have to commit your entire
           machine immediately.  It's simple to rollback if you really want to.
         </p>
@@ -65,13 +65,13 @@
         <p>
           Just curl this URL.  If the bootstrap script needs any interaction
           with you with you it will be in the first few seconds.  It might need
-          sudo to install the cider executable.
+          sudo to install the cinderella executable.
         </p>
         <p>
           The build should take about 30 minutes.
         </p>
         <pre class="terminal">% curl \
-   http://github.com/atmos/cider/raw/master/bootstrap.sh \
+   http://github.com/atmos/cinderella/raw/master/bootstrap.sh \
    -o - | sh
 [22:06:02] INFO: Starting Chef Solo Run
 [22:34:29] INFO: Chef Run complete in 1707.521717 seconds
@@ -79,16 +79,16 @@
 </pre>
 
         <p>
-          Cider can manage itself from here.  Open up a new shell and you're
+          Cinderella can manage itself from here.  Open up a new shell and you're
           ready to hack.
         </p>
         <hr />
 
-        <h2>Running Cider</h2>
+        <h2>Running Cinderella</h2>
         <p>
           Just run it, it updates itself.
         </p>
-        <pre class="terminal">% cider
+        <pre class="terminal">% cinderella
 INFO: Starting Chef Solo Run
 INFO: Replacing the run_list with ["homebrew", "rvm", "node"] from JSON</pre>
 
@@ -106,14 +106,14 @@ INFO: Replacing the run_list with ["homebrew", "rvm", "node"] from JSON</pre>
 
         <h2>Notes</h2>
         <ul>
-          <li>Backups are created for any dotfiles cider touches.</li>
-          <li>Customize your environment in ~/.cider.profile.custom</li>
+          <li>Backups are created for any dotfiles cinderella touches.</li>
+          <li>Customize your environment in ~/.cinderella.profile.custom</li>
           <li>Sepcifying a default RVM version other than 1.8.7: <pre class="terminal">% rvm use 1.9.2 --default</pre></li>
         </ul>
         <hr />
         <h2>Feedback</h2>
         <p>
-          <a href="http://github.com/atmos/cider/issues">Github Issues</a> / <a href="http://github.com/inbox/new/atmos">Message Me</a>
+          <a href="http://github.com/atmos/cinderella/issues">Github Issues</a> / <a href="http://github.com/inbox/new/atmos">Message Me</a>
         </p>
         </ul>
         <hr />
@@ -123,7 +123,7 @@ INFO: Replacing the run_list with ["homebrew", "rvm", "node"] from JSON</pre>
     <div class="footer">
       <span>&copy; <a href="http://atmos.org">atmos.org</a> : est. 2000</span>
     </div>
-    <a href="http://github.com/atmos/cider">
+    <a href="http://github.com/atmos/cinderella">
       <img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub" />
     </a>
     </body>
