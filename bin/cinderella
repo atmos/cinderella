@@ -1,12 +1,11 @@
 #!/usr/bin/env ruby
-
 require "rubygems"
-require "cider"
+require "cinderella"
 require "optparse"
 
 ENV['HOME']     ||= '/Users/bofh'
 ENV['USER']     ||= 'bofh'
-ENV['EMAIL']    ||= 'noreploy@gmail.com'
+ENV['EMAIL']    ||= 'noreply@gmail.com'
 ENV['EDITOR']   ||= 'vim'
 ENV['FULLNAME'] ||= 'Marlon Brando'
 

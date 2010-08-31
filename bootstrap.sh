@@ -1,29 +1,29 @@
-echo "Ensuring we have the latest version of cider installed"
-echo "Run started `date`" >> ~/.cider.bootstrap.log 2>&1
-which ruby >> ~/.cider.bootstrap.log 2>&1
-which gem  >> ~/.cider.bootstrap.log 2>&1
+echo "Ensuring we have the latest version of cinderella installed"
+echo "Run started `date`" >> ~/.cinderella.bootstrap.log 2>&1
+which ruby >> ~/.cinderella.bootstrap.log 2>&1
+which gem  >> ~/.cinderella.bootstrap.log 2>&1
 
 which gem | grep -q rvm
 if [ $? -eq 0 ]; then
-  gem uninstall cider -aIx              >> ~/.cider.bootstrap.log 2>&1
-  gem install   cider --no-rdoc --no-ri >> ~/.cider.bootstrap.log 2>&1
+  gem uninstall cinderella -aIx              >> ~/.cinderella.bootstrap.log 2>&1
+  gem install   cinderella --no-rdoc --no-ri >> ~/.cinderella.bootstrap.log 2>&1
 else
-  sudo gem uninstall cider -aIx              >> ~/.cider.bootstrap.log 2>&1
-  sudo gem install   cider --no-rdoc --no-ri >> ~/.cider.bootstrap.log 2>&1
+  sudo gem uninstall cinderella -aIx              >> ~/.cinderella.bootstrap.log 2>&1
+  sudo gem install   cinderella --no-rdoc --no-ri >> ~/.cinderella.bootstrap.log 2>&1
 fi
 
-echo "Cider installed successfully"
+echo "Cinderella installed successfully"
 
 hash -r
-cider
+cinderella
 if [ "$?" -eq "0" ]; then
-  if [ -d ~/.cider ]; then
-    mv ~/.cider.bootstrap.log ~/.cider
+  if [ -d ~/.cinderella ]; then
+    mv ~/.cinderella.bootstrap.log ~/.cinderella
   fi
-  source ~/.cider.profile
+  source ~/.cinderella.profile
   hash -r
 else
-  cat ~/.cider.bootstrap.log
+  cat ~/.cinderella.bootstrap.log
   echo ""
   echo "Something went wonky with the install. :("
 fi

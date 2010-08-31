@@ -8,7 +8,7 @@ end
 
 group :test do
   gem "rake"
-  gem "bundler",     "~>0.9.26"
+  gem "bundler",     "~>1.0"
 end
 
 # vim:ft=ruby

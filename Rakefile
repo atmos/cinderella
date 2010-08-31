@@ -2,11 +2,11 @@ require 'rake/gempackagetask'
 require 'rubygems/specification'
 require 'bundler'
 
-GEM         = "cider"
-GEM_VERSION = "0.1.8"
+GEM         = "cinderella"
+GEM_VERSION = "0.2.0"
 AUTHOR      = "Corey Donohoe"
 EMAIL       = "atmos@atmos.org"
-HOMEPAGE    = "http://github.com/atmos/cider"
+HOMEPAGE    = "http://github.com/atmos/cinderella"
 SUMMARY     = "The development environment you never wanted to manage alone"
 
 spec = Gem::Specification.new do |s|
@@ -21,14 +21,14 @@ spec = Gem::Specification.new do |s|
   s.email            = EMAIL
   s.homepage         = HOMEPAGE
 
-  bundle = Bundler::Definition.from_gemfile('Gemfile')
+  bundle = Bundler::Definition.build('Gemfile', 'Gemfile.lock', { })
   bundle.dependencies.each do |dep|
     next unless dep.groups.include?(:runtime)
     s.add_dependency(dep.name, dep.version_requirements.to_s)
   end
 
   s.bindir       = "bin"
-  s.executables  = %w( cider )
+  s.executables  = %w( cinderella )
   s.require_path = 'lib'
   s.files        = %w(LICENSE README.md Rakefile) + Dir.glob("{lib}/**/*")
 end
