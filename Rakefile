@@ -3,7 +3,7 @@ require 'rubygems/specification'
 require 'bundler'
 
 GEM         = "cinderella"
-GEM_VERSION = "0.2.0"
+GEM_VERSION = "0.2.1"
 AUTHOR      = "Corey Donohoe"
 EMAIL       = "atmos@atmos.org"
 HOMEPAGE    = "http://github.com/atmos/cinderella"
