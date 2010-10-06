@@ -2,6 +2,7 @@
 require "rubygems"
 require "cinderella"
 require "optparse"
+require "etc"
 
 ENV['HOME']     ||= '/Users/bofh'
 ENV['USER']     ||= 'bofh'
@@ -13,6 +14,13 @@ RECOMMENDED_LLVM   = 2206
 MACOS_FULL_VERSION = `/usr/bin/sw_vers -productVersion`.chomp
 MACOS_VERSION      = /(10\.\d+)(\.\d+)?/.match(MACOS_FULL_VERSION).captures.first.to_f
 
+# stop people from running this as root
+if Etc.getpwuid.uid == 0
+  $stderr.puts "#{$0} should not be run as root, try again as a normal user"
+  exit 1
+end
+
+# ensure we have a recent version of snow leopard/xcode
 if MACOS_VERSION >= 10.6
   begin
     xcode_path = `/usr/bin/xcode-select -print-path`.chomp
