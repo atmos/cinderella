@@ -23,7 +23,21 @@ if [ "$?" -eq "0" ]; then
   source ~/.cinderella.profile
   hash -r
 else
-  cat ~/.cinderella.bootstrap.log
-  echo ""
-  echo "Something went wonky with the install. :("
+  echo "Something went wonky, retrying"
+  cinderella
+  if [ "$?" -eq "0" ]; then
+    source ~/.cinderella.profile
+    hash -r
+  else
+    echo "Something went wonky again, retrying once more"
+    cinderella
+    if [ "$?" -eq "0" ]; then
+      source ~/.cinderella.profile
+      hash -r
+    else
+      cat ~/.cinderella.bootstrap.log
+      echo ""
+      echo "Something went wonky with the install. :("
+    fi
+  fi
 fi
