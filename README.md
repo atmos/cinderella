@@ -6,7 +6,7 @@ apple + homebrew + chef
 Installing
 ==========
 
-    % open http://www.atmos.org/cinderella/intro.html
+    % open http://www.atmos.org/cinderella/
 
 You should be in great shape for contributing to open source on a mac after that.
 
