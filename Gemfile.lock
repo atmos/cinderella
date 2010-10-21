@@ -37,7 +37,7 @@ GEM
       mixlib-log
       systemu
     rake (0.8.7)
-    rest-client (1.5.1)
+    rest-client (1.6.1)
       mime-types (>= 1.16)
     rvm (0.1.47)
     systemu (1.2.0)
@@ -51,5 +51,5 @@ DEPENDENCIES
   chef (~> 0.9.10)
   json (~> 1.4.6)
   rake
-  rest-client (~> 1.5.1)
+  rest-client (~> 1.6.1)
   rvm (~> 0.1.47)
