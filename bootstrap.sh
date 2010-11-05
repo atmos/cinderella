@@ -11,6 +11,7 @@ if [ $? -eq 0 ]; then
 else
   sudo gem uninstall cinderella -aIx              >> ~/.cinderella/bootstrap.log 2>&1
   sudo gem install   cinderella --no-rdoc --no-ri >> ~/.cinderella/bootstrap.log 2>&1
+  sudo gem update                                 >> ~/.cinderella/bootstrap.log 2>&1
 fi
 
 echo "Cinderella installed successfully"
