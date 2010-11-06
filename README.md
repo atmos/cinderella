@@ -2,7 +2,7 @@ cinderella
 ==========
 
 Cinderella is a CLI app to manage common open source needs on an Mac
-OSX.  Checkout the links below for more info.
+OSX. Checkout the link below for more info.
 
 Installing
 ==========
