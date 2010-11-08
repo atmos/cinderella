@@ -1,4 +1,6 @@
 echo "Ensuring we have the latest version of cinderella installed"
+echo "A first time install takes about 45 minutes on a modern machine"
+
 mkdir -p ~/.cinderella
 echo "Run started `date`" >> ~/.cinderella/bootstrap.log 2>&1
 which ruby >> ~/.cinderella/bootstrap.log 2>&1
