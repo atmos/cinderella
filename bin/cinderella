@@ -20,6 +20,13 @@ if Etc.getpwuid.uid == 0
   exit 1
 end
 
+# let people know they're using a non-cinderella based rvm
+unless ENV['rvm_path'].nil? || ENV['rvm_path'] =~ /#{ENV['HOME']}\/Developer/
+  $stderr.puts "You have a pre-existing rvm install that might mess with installation"
+  $stderr.puts "You should take a look at https://github.com/atmos/cinderella/issues#issue/25"
+  $stderr.puts "I'm going to continue anyway, *fingers crossed* ;)"
+end
+
 # ensure we have a recent version of snow leopard/xcode
 if MACOS_VERSION >= 10.6
   begin
