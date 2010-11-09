@@ -2,50 +2,12 @@
 require "rubygems"
 require "cinderella"
 require "optparse"
-require "etc"
 
 ENV['HOME']     ||= '/Users/bofh'
 ENV['USER']     ||= 'bofh'
 ENV['EMAIL']    ||= 'noreply@gmail.com'
 ENV['EDITOR']   ||= 'vim'
 ENV['FULLNAME'] ||= 'Marlon Brando'
-
-RECOMMENDED_LLVM   = 2206
-MACOS_FULL_VERSION = `/usr/bin/sw_vers -productVersion`.chomp
-MACOS_VERSION      = /(10\.\d+)(\.\d+)?/.match(MACOS_FULL_VERSION).captures.first.to_f
-
-# stop people from running this as root
-if Etc.getpwuid.uid == 0
-  $stderr.puts "#{$0} should not be run as root, try again as a normal user"
-  exit 1
-end
-
-# let people know they're using a non-cinderella based rvm
-unless ENV['rvm_path'].nil? || ENV['rvm_path'] =~ /#{ENV['HOME']}\/Developer/
-  $stderr.puts "You have a pre-existing rvm install that might mess with installation"
-  $stderr.puts "You should take a look at https://github.com/atmos/cinderella/issues#issue/25"
-  $stderr.puts "I'm going to continue anyway, *fingers crossed* ;)"
-end
-
-# ensure we have a recent version of snow leopard/xcode
-if MACOS_VERSION >= 10.6
-  begin
-    xcode_path = `/usr/bin/xcode-select -print-path`.chomp
-    exit(1) if xcode_path.empty?
-    if `#{xcode_path}/usr/bin/llvm-gcc-4.2 -v 2>&1` =~ /LLVM build (\d{4,})/
-      if $1.to_i < RECOMMENDED_LLVM
-        $stderr.puts "You should really upgrade your xcode install"
-      end
-    end
-  rescue
-    $stderr.puts "You need xcode for this to work :\\"
-    exit(1)
-  end
-else
-  $stderr.puts "You should really upgrade to snow leopard"
-  $stderr.puts "Make sure you have xcode installed and cross your fingers"
-  $stderr.puts "I've seen it work on leopard though..."
-end
 
 Cider::Runner.run
 
