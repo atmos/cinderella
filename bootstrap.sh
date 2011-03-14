@@ -6,6 +6,10 @@ echo "Run started `date`" >> ~/.cinderella/bootstrap.log 2>&1
 which ruby >> ~/.cinderella/bootstrap.log 2>&1
 which gem  >> ~/.cinderella/bootstrap.log 2>&1
 
+if [ `gem --version` != "1.6.2" ]; then
+  echo "You need to upgrade rubygems to 1.6.2"
+fi
+
 which gem | grep -q rvm
 if [ $? -eq 0 ]; then
   gem uninstall cinderella -aIx              >> ~/.cinderella/bootstrap.log 2>&1
