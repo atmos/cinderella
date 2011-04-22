@@ -6,8 +6,8 @@ echo "Run started `date`" >> ~/.cinderella/bootstrap.log 2>&1
 which ruby >> ~/.cinderella/bootstrap.log 2>&1
 which gem  >> ~/.cinderella/bootstrap.log 2>&1
 
-if [ `gem --version` != "1.6.2" ]; then
-  echo "You need to upgrade rubygems to 1.6.2"
+if [ `gem --version` != "1.7.2" ]; then
+  echo "You need to upgrade rubygems to 1.7.2"
 fi
 
 which gem | grep -q rvm
