@@ -9,6 +9,18 @@ ENV['EMAIL']    ||= 'noreply@gmail.com'
 ENV['EDITOR']   ||= 'vim'
 ENV['FULLNAME'] ||= 'Marlon Brando'
 
+command = ARGV[0]
+if command == "uninstall"
+  services = %w/memcached mysql redis mongodb postgresql/
+  services.each do |service|
+    print "stopping: #{service}"
+    system("lunchy stop #{service}")
+  end
+  puts "Removing ~/Developer"
+  system("rm -rf ~/Developer")
+  exit
+end
+
 Cider::Runner.run
 
 # vim:ft=ruby
