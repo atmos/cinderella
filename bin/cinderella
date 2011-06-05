@@ -9,18 +9,40 @@ ENV['EMAIL']    ||= 'noreply@gmail.com'
 ENV['EDITOR']   ||= 'vim'
 ENV['FULLNAME'] ||= 'Marlon Brando'
 
-command = ARGV[0]
-if command == "uninstall"
-  services = %w/memcached mysql redis mongodb postgresql/
-  services.each do |service|
-    print "stopping: #{service}"
-    system("lunchy stop #{service}")
+config = {
+  :action => 'install'
+}
+
+optparse = OptionParser.new do |opts|
+  opts.banner = "Usage: cinderella [options]"
+
+  opts.on( '-h', '--help', 'Display this screen' ) do
+    puts opts
+    exit
   end
-  puts "Removing ~/Developer"
-  system("rm -rf ~/Developer")
-  exit
+
+  opts.on( '-u', '--uninstall', 'Uninstall cinderella' ) do
+    config[:action] = 'uninstall'
+  end
+
+  opts.on( '-i', '--install', 'Install cinderella [Default]' ) do
+    config[:action] = 'uninstall'
+  end
+
+  opts.on( '-v', '--version', 'Display the cinderella version' ) do
+    config[:action] = 'version'
+  end
 end
 
-Cider::Runner.run
+optparse.parse!
+
+case config[:action]
+when 'uninstall'
+  Cider::Runner.uninstall
+when 'version'
+  Cider::Runner.version
+else
+  Cider::Runner.run
+end
 
 # vim:ft=ruby

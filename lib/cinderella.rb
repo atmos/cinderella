@@ -4,6 +4,8 @@ require "tmpdir"
 require "rest_client"
 
 module Cider
+  VERSION = "0.2.7"
+
   class Runner
     RECOMMENDED_LLVM   = 2206
     MACOS_FULL_VERSION = `/usr/bin/sw_vers -productVersion`.chomp
@@ -11,6 +13,28 @@ module Cider
 
     def self.run
       new.run
+    end
+
+    def self.uninstall
+      new.uninstall
+    end
+
+    def self.version
+      puts "Cinderella Version: #{Cider::VERSION}"
+    end
+
+    def uninstall
+      print "Stopping Service: "
+      services = %w/memcached mysql redis mongodb postgresql/
+      services.each do |service|
+        print "#{service} "
+        sleep 0.5
+        system("lunchy stop #{service}")
+      end
+      puts ""
+      puts "Removing ~/Developer"
+      system("rm -rf ~/.cinderella.profile ~/Developer")
+      puts "Cinderella successfully uninstalled"
     end
 
     def run
