@@ -1,16 +1,6 @@
 source 'http://rubygems.org'
 
-group :runtime do
-  gem "rvm",         "~>0.1.47"
-  gem "lunchy",      "~>0.4.0"
-  gem "chef",        "~>0.9.10"
-  gem "json",        "~>1.4.6"
-  gem "rest-client", "~>1.6.1"
-end
-
-group :test do
-  gem "rake"
-  gem "bundler",     "~>1.0"
-end
+# Specify your gem's dependencies in sinatra_auth_github.gemspec
+gemspec
 
 # vim:ft=ruby
