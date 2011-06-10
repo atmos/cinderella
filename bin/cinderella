@@ -38,11 +38,11 @@ optparse.parse!
 
 case config[:action]
 when 'uninstall'
-  Cider::Runner.uninstall
+  Cinderella::Runner.uninstall
 when 'version'
-  Cider::Runner.version
+  Cinderella::Runner.version
 else
-  Cider::Runner.run
+  Cinderella::Runner.run
 end
 
 # vim:ft=ruby

@@ -2,10 +2,9 @@ require "etc"
 require "json"
 require "tmpdir"
 require "rest_client"
+require "cinderella/version"
 
-module Cider
-  VERSION = "0.2.7"
-
+module Cinderella
   class Runner
     RECOMMENDED_LLVM   = 2206
     MACOS_FULL_VERSION = `/usr/bin/sw_vers -productVersion`.chomp
@@ -20,7 +19,7 @@ module Cider
     end
 
     def self.version
-      puts "Cinderella Version: #{Cider::VERSION}"
+      puts "Cinderella Version: #{Cinderella::VERSION}"
     end
 
     def uninstall
