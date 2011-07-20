@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rvm",         "~>0.1.47"
   s.add_dependency "lunchy",      "~>0.4.0"
-  s.add_dependency "chef",        "~>0.9.10"
+  s.add_dependency "chef",        "~>0.10.2"
   s.add_dependency "json",        "~>1.4.6"
   s.add_dependency "rest-client", "~>1.6.1"
 
