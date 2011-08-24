@@ -13,7 +13,6 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "cinderella"
 
-  s.add_dependency "rvm",         "~>0.1.47"
   s.add_dependency "lunchy",      "~>0.4.0"
   s.add_dependency "chef",        "~>0.10.2"
   s.add_dependency "json",        "~>1.5.0"
