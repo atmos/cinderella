@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.add_dependency "lunchy",      "~>0.4.0"
   s.add_dependency "chef",        "=0.10.4"
   s.add_dependency "json",        "=1.5.2"
-  s.add_dependency "rest-client", "=1.6.1"
+  s.add_dependency "rest-client", "~>1.6.1"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
