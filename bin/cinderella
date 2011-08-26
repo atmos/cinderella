@@ -10,7 +10,8 @@ ENV['EDITOR']   ||= 'vim'
 ENV['FULLNAME'] ||= 'Marlon Brando'
 
 config = {
-  :action => 'install'
+  :action   => 'install',
+  :unstable => false
 }
 
 optparse = OptionParser.new do |opts|
@@ -32,6 +33,10 @@ optparse = OptionParser.new do |opts|
   opts.on( '-v', '--version', 'Display the cinderella version' ) do
     config[:action] = 'version'
   end
+
+  opts.on( '-u', '--unstable', 'Build from homebrew master branch instead of a stable sha1' ) do
+    config[:unstable] = true
+  end
 end
 
 optparse.parse!
@@ -42,7 +47,11 @@ when 'uninstall'
 when 'version'
   Cinderella::Runner.version
 else
-  Cinderella::Runner.run
+  if config[:unstable]
+    Cinderella::Runner.run_unstable
+  else
+    Cinderella::Runner.run
+  end
 end
 
 # vim:ft=ruby

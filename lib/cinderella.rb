@@ -14,6 +14,11 @@ module Cinderella
       new.run
     end
 
+    def self.run_unstable
+      ENV['CINDERELLA_RELEASE'] = 'origin/master'
+      run
+    end
+
     def self.uninstall
       new.uninstall
     end
@@ -72,7 +77,7 @@ module Cinderella
 
     def sketchy_ruby?
       case `which ruby`.chomp
-      when '/usr/bin/ruby', /#{ENV['HOME']}\/Developer/
+      when '/usr/bin/ruby', /#{ENV['HOME']}\/Developer/, /#{ENV['HOME']}\/\.rbenv/
         false
       else
         true
