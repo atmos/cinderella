@@ -31,8 +31,8 @@ module Cinderella
       puts "Cinderella Version: #{Cinderella::VERSION}"
     end
 
-    def root
-      @root ||=
+    def root_dir
+      @root_dir ||=
         if ENV['SMEAGOL_ROOT_DIR']
           "#{ENV['SMEAGOL_ROOT_DIR']}/Developer"
         else
@@ -48,8 +48,8 @@ module Cinderella
         system("lunchy stop #{service}")
       end
       puts ""
-      puts "Removing #{root}/Developer"
-      system("rm -rf ~/.cinderella.profile #{root}/Developer")
+      puts "Removing #{root_dir}/Developer"
+      system("rm -rf ~/.cinderella.profile #{root_dir}/Developer")
       puts "Cinderella successfully uninstalled"
     end
 
@@ -71,11 +71,9 @@ module Cinderella
         puts "Extracting #{local_file} to /opt"
         `tar zxvf #{local_file} -C /opt > #{log_file} 2>&1`
         if $?.success?
-          puts "Cinderella successfully installed"
-          puts "Open up a new shell and run the following command"
-          puts "\nsource /opt/Developer/cinderella.profile\n"
-          puts "\nThen run the 'cinderella' command."
-          exit 0
+          post_install
+          puts "\n\nCinderella successfully installed"
+          puts "Open up a new terminal and you're ready to go!"
         else
           puts "Something went wrong installing cinderella, logs at #{log_file}"
           exit 1
@@ -84,6 +82,17 @@ module Cinderella
         puts "Had issues downloading the binary installer. Sorry, bro."
         exit 1
       end
+    end
+
+    def post_install
+      script_file = "#{Dir.tmpdir}/cinderella.post_install.sh"
+
+      File.open(script_file, "w") do |fp|
+        fp.puts "#!/bin/bash"
+        fp.puts "source /opt/Developer/cinderella.profile"
+        fp.puts "cinderella"
+      end
+      `sh #{script_file}`
     end
 
     def binary_url
