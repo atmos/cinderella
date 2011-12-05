@@ -92,7 +92,7 @@ module Cinderella
         fp.puts "source /opt/Developer/cinderella.profile"
         fp.puts "cinderella"
       end
-      `sh #{script_file}`
+      `bash #{script_file}`
     end
 
     def binary_url
