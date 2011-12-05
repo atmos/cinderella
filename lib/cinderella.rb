@@ -27,6 +27,15 @@ module Cinderella
       puts "Cinderella Version: #{Cinderella::VERSION}"
     end
 
+    def root
+      @root ||=
+        if ENV['SMEAGOL_ROOT_DIR']
+          "#{ENV['SMEAGOL_ROOT_DIR']}/Developer"
+        else
+          "~/Developer"
+        end
+    end
+
     def uninstall
       print "Stopping Service: "
       services = %w/memcached mysql redis mongodb postgresql/
@@ -36,8 +45,8 @@ module Cinderella
         system("lunchy stop #{service}")
       end
       puts ""
-      puts "Removing ~/Developer"
-      system("rm -rf ~/.cinderella.profile ~/Developer")
+      puts "Removing #{root}/Developer"
+      system("rm -rf ~/.cinderella.profile #{root}/Developer")
       puts "Cinderella successfully uninstalled"
     end
 
@@ -77,7 +86,7 @@ module Cinderella
 
     def sketchy_ruby?
       case `which ruby`.chomp
-      when '/usr/bin/ruby', /#{ENV['HOME']}\/Developer/, /#{ENV['HOME']}\/\.rbenv/
+      when '/usr/bin/ruby', /#{root_dir}/
         false
       else
         true

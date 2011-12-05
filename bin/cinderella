@@ -27,7 +27,7 @@ optparse = OptionParser.new do |opts|
   end
 
   opts.on( '-i', '--install', 'Install cinderella [Default]' ) do
-    config[:action] = 'uninstall'
+    config[:action] = 'install'
   end
 
   opts.on( '-v', '--version', 'Display the cinderella version' ) do
