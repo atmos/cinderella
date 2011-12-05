@@ -34,8 +34,12 @@ optparse = OptionParser.new do |opts|
     config[:action] = 'version'
   end
 
-  opts.on( '-u', '--unstable', 'Build from homebrew master branch instead of a stable sha1' ) do
+  opts.on( '-x', '--unstable', 'Build from homebrew master branch instead of a stable sha1' ) do
     config[:unstable] = true
+  end
+
+  opts.on( '-b', '--binary-installer', 'Build from homebrew master branch instead of a stable sha1' ) do
+    config[:action] = 'binary_install'
   end
 end
 
@@ -44,6 +48,8 @@ optparse.parse!
 case config[:action]
 when 'uninstall'
   Cinderella::Runner.uninstall
+when 'binary_install'
+  Cinderella::Runner.binary_install
 when 'version'
   Cinderella::Runner.version
 else

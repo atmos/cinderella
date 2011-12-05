@@ -23,6 +23,10 @@ module Cinderella
       new.uninstall
     end
 
+    def self.binary_install
+      new.binary_installer
+    end
+
     def self.version
       puts "Cinderella Version: #{Cinderella::VERSION}"
     end
@@ -37,10 +41,9 @@ module Cinderella
     end
 
     def uninstall
-      print "Stopping Service: "
       services = %w/memcached mysql redis mongodb postgresql/
       services.each do |service|
-        print "#{service} "
+        puts "Stopping Server: #{service} "
         sleep 0.5
         system("lunchy stop #{service}")
       end
@@ -48,6 +51,43 @@ module Cinderella
       puts "Removing #{root}/Developer"
       system("rm -rf ~/.cinderella.profile #{root}/Developer")
       puts "Cinderella successfully uninstalled"
+    end
+
+    def binary_installer
+      log_file   = "#{Dir.tmpdir}/cinderella.binary.output.txt"
+      local_file = "#{Dir.tmpdir}/cinderella-0.3.2.tar.gz"
+      local_user = `whoami`.chomp
+
+      unless File.exists?("/opt")
+        puts "You don't have an /opt directory, we need sudo access for this."
+        puts "You'll only be prompted for your password once."
+        `sudo mkdir -p /opt`
+        `sudo chown #{local_user}:staff /opt`
+      end
+      unless File.exists?(local_file)
+        puts `curl -o #{local_file} #{binary_url}`
+      end
+      if File.exists?(local_file)
+        puts "Extracting #{local_file} to /opt"
+        `tar zxvf #{local_file} -C /opt > #{log_file} 2>&1`
+        if $?.success?
+          puts "Cinderella successfully installed"
+          puts "Open up a new shell and run the following command"
+          puts "\nsource /opt/Developer/cinderella.profile\n"
+          puts "\nThen run the 'cinderella' command."
+          exit 0
+        else
+          puts "Something went wrong installing cinderella, logs at #{log_file}"
+          exit 1
+        end
+      else
+        puts "Had issues downloading the binary installer. Sorry, bro."
+        exit 1
+      end
+    end
+
+    def binary_url
+      "http://cinderella.s3.amazonaws.com/cinderella-0.3.2.tar.bz2"
     end
 
     def run
