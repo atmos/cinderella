@@ -111,11 +111,6 @@ module Cinderella
         warn "I've seen it work on leopard though..."
       end
 
-      unless sane_xcode_version?
-        $stderr.puts "You need xcode for this to work :\\"
-        exit(1)
-      end
-
       if sketchy_ruby?
         warn "You have a pre-existing ruby install that might mess with installation"
         warn "I'm going to continue anyway, *fingers crossed* ;)"
@@ -148,18 +143,6 @@ module Cinderella
 
     def sane_os_version?
       MACOS_VERSION >= 10.6
-    end
-
-    def sane_xcode_version?
-      xcode_path = `/usr/bin/xcode-select -print-path`.chomp
-      if xcode_path.empty?
-        false
-      elsif `#{xcode_path}/usr/bin/llvm-gcc-4.2 -v 2>&1` =~ /LLVM build (\d{4,})/
-        if $1.to_i < RECOMMENDED_LLVM
-          warn "You should really upgrade your xcode install"
-        end
-        true
-      end
     end
 
     def warn(msg)
