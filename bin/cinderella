@@ -8,6 +8,7 @@ ENV['USER']     ||= 'bofh'
 ENV['EMAIL']    ||= 'noreply@gmail.com'
 ENV['EDITOR']   ||= 'vim'
 ENV['FULLNAME'] ||= 'Marlon Brando'
+ENV['SOLO_URL'] ||= 'http://ciderapp.org/solo.rb"'
 
 config = {
   :action   => 'install',

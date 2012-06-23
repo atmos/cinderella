@@ -150,7 +150,7 @@ module Cinderella
     end
 
     def download_solo_rb
-      response = RestClient.get("http://ciderapp.org/solo.rb")
+      response = RestClient.get(ENV['SOLO_URL'])
       if response.code == 200
         File.open(filename, "w") do |fp|
           fp.write(response.body)
