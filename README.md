@@ -7,7 +7,7 @@ OSX. Checkout the link below for more info.
 Installing
 ==========
 
-Visit [http://www.atmos.org/cinderella][http://www.atmos.org/cinderella] and follow the instructions!
+Visit http://www.atmos.org/cinderella and follow the instructions!
 
 You should be in great shape for contributing to open source on a mac after that.
 
